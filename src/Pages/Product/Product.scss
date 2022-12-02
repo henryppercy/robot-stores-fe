@@ -5,6 +5,7 @@
     margin: 4rem 0 0;
 
     h4, h5 {
+        font-family: $body-text;
         font-weight: 800;
         color: $light;
         margin: 0.7rem 0 0.3rem 0.3rem;
@@ -19,6 +20,7 @@
     }
 
     p {
+        font-family: $body-text;
         color: $light;
         font-weight: 400;
         font-size: 1rem;
@@ -28,6 +30,43 @@
     .card {
         img {
             border-radius: 1rem;
+        }
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .product {
+        padding: 8rem 2rem;
+        margin: 0;
+
+        h4, h5 {
+            font-weight: 800;
+            color: $light;
+            margin: 0.7rem 0 0.8rem 0.3rem;
+        }
+    
+        h4 {
+            font-size: 3rem;
+        }
+    
+        h5 {
+            font-size: 2rem;
+        }
+    
+        p {
+            color: $light;
+            font-weight: 400;
+            font-size: 1.2rem;
+            margin: 0 0.3rem;
+        }
+
+        .card {
+            display: flex;
+            gap: 1rem;
+
+            img {
+                width: 35%;
+            }
         }
     }
 }
