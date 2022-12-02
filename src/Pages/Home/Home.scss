@@ -1,5 +1,13 @@
+@use '../../styles/colours' as *;
+
+@mixin gradient-yellow-orange {
+    background: -webkit-linear-gradient(45deg, $yellow, $orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .home {
-    margin-top: 3rem;
+    padding-top: 3rem;
 
     height: 100vh;
 
@@ -9,6 +17,10 @@
 
     .logo {
         padding: 1rem;
+    }
+
+    svg {
+        width: 4rem;
     }
 
     header {
@@ -29,4 +41,31 @@
     }    
 }
 
-// Media query for large displays 
+@media screen and (min-width: 900px) {
+    .home {
+        display: grid;
+        grid-template-columns: auto 80%;
+        align-content: center;
+        gap: 0;
+    
+        .logo {
+            padding: 1.6rem 0.5rem;
+            justify-self: end;
+        }
+
+        svg {
+            width: 5rem;
+        }
+
+         header {
+    
+            h1 {
+                font-size: 6rem;
+            }
+        
+            h3 {
+                font-size: 3rem;
+            }
+        }   
+    }
+}
