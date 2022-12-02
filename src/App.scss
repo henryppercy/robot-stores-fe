@@ -1,17 +1,5 @@
+@use './styles/colours' as *;
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
-
-$heading: 'Orbitron', sans-serif;
-$body-text: 'Helvetica', sans-serif;
-$blue: #48C8FF;
-$purple: #BD34FE;
-$dark: #242424;
-$light: #E3E3E3;
-
-@mixin gradient-left {
-    background: -webkit-linear-gradient(45deg, $blue, $purple);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -20,6 +8,12 @@ $light: #E3E3E3;
 img {
     width: 100%;
     height: auto;
+}
+
+@mixin gradient-blue-purple {
+    background: -webkit-linear-gradient(45deg, $blue, $purple);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
     
 a,
@@ -47,7 +41,7 @@ h1, h2, h3 {
 
 h1 {
     font-size: 5rem;
-    @include gradient-left();
+    @include gradient-blue-purple();
 }
 
 h3 {
