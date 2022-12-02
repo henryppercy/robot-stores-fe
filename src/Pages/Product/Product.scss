@@ -1,0 +1,33 @@
+@use '../../styles/colours' as *;
+
+.product {
+    padding: 1rem;
+    margin: 4rem 0 0;
+
+    h4, h5 {
+        font-weight: 800;
+        color: $light;
+        margin: 0.7rem 0 0.3rem 0.3rem;
+    }
+
+    h4 {
+        font-size: 2rem;
+    }
+
+    h5 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        color: $light;
+        font-weight: 400;
+        font-size: 1rem;
+        margin: 0 0.3rem;
+    }
+
+    .card {
+        img {
+            border-radius: 1rem;
+        }
+    }
+}
