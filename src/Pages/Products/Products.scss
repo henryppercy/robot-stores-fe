@@ -6,6 +6,7 @@
     }
 
     h4, p {
+        font-family: $body-text;
         font-weight: 800;
         color: $light;
     }
@@ -30,7 +31,7 @@
 
         select {
             width: 7rem;
-            font-family: $heading;
+            font-family: $body-text;
             outline: 0;
         }
     }
