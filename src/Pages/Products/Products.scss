@@ -1,0 +1,54 @@
+@use '../../styles/colours' as *;
+
+
+.products-page {
+    img {
+        border-radius: 0.6rem;
+    }
+
+    h4, p {
+        font-weight: 800;
+        color: $light;
+    }
+
+    h4 {
+        font-size: 1rem;
+        margin: 0.7rem 0 0.3rem 0.3rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+        margin: 0 0.3rem;
+    }
+
+    form {
+        padding: 1rem;
+        margin-top: 5rem;
+
+        display: flex;
+        align-items: flex-start;
+        gap: 0.3rem;
+
+        select {
+            width: 7rem;
+            font-family: $heading;
+            outline: 0;
+        }
+    }
+
+    .card {
+        margin-bottom: 1rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .products {
+        padding: 1rem;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.4rem;
+    }
+}
