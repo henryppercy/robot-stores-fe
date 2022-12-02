@@ -10,7 +10,7 @@ function Products() {
           <form>
               <label htmlFor="categories"></label>
               <select name="categories" id="categories">
-                <option value="aprons" disabled>Category</option>
+                <option value="category" disabled selected>Category</option>
                 <option value="aprons">Aprons</option>
                 <option value="baseball-ats">Baseball Hats</option>
                 <option value="mugs">Mugs</option>
@@ -18,7 +18,7 @@ function Products() {
               </select>
               <label htmlFor="characters"></label>
               <select name="characters" id="characters">
-              <option value="aprons" disabled>Character</option>
+              <option value="character" disabled selected>Character</option>
                 <option value="bubbles">Bubbles</option>
                 <option value="dolores">Dolores</option>
                 <option value="fred">Fred</option>
