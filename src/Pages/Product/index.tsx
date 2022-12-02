@@ -1,5 +1,4 @@
 import Navbar from "../../Componants/Navbar";
-import test from '../../assets/test.jpeg';
 import './Product.scss';
 
 function Product() {
