@@ -18,7 +18,7 @@ function Products() {
               </select>
               <label htmlFor="characters"></label>
               <select name="characters" id="characters">
-              <option value="character" disabled selected>Character</option>
+                <option value="character" disabled selected>Character</option>
                 <option value="bubbles">Bubbles</option>
                 <option value="dolores">Dolores</option>
                 <option value="fred">Fred</option>
