@@ -56,7 +56,7 @@ function Products() {
           
         <div className="products">
           {error && <div className="error">Error: {error}</div>}
-          {products.map((product: Product) => <ProductCard key={product.id} title={product.title} price={product.price} image={product.image}></ProductCard>)}
+          {products.map((product: Product) => <ProductCard key={product.id} id={product.id} title={product.title} price={product.price} image={product.image}></ProductCard>)}
         </div>
       </section>
     </>
