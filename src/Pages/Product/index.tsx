@@ -10,7 +10,6 @@ type Product = {
   price: number,
   image: string,
   description: string,
-  
 }
 
 function Product() {
