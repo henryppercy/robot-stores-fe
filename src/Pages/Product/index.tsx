@@ -1,25 +1,58 @@
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import Navbar from "../../Componants/Navbar";
+import errorHandler from "../../utils/errorHandler";
 import './Product.scss';
 
+type Product = {
+  id: number,
+  title: string,
+  price: number,
+  image: string,
+  description: string,
+  
+}
+
 function Product() {
-    return (
-      <>
-        <Navbar></Navbar>
-        <section className="product">
-          <div className="card">
-              <img src={test}></img>
-              <div>
-                <h4>It’s All 0’s and 1’s to Me! Apron</h4>
-                <h5>$24.00</h5>
-                <p>Everyone's a chef in our eco-friendly apron, made from 55% organic cotton and 45% recycled polyester. Showcase your favorite Binaryville robot design, screen-printed in PVC- and phthalate-free inks. Apron measures 24 inches wide by 30 inches long and is easily adjustable around the neck and waist with one continuous strap. Machine wash warm, tumble dry low.</p>
-                <h5>It’s All 0’s and 1’s to Me!</h5>
-                <p>Perhaps nothing rings more true in Binaryville than this favorite phrase of the locales. Fred robot, encircled in binary digits, proudly beams out from behind these words of wisdom.</p>
-              </div>
-          </div>
-        </section>
-      </>
-    );
+  const { id } = useParams();
+  const [product, setProduct] = useState([])
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    getProduct(id)
+  }, [])
+  
+  const getProduct = async (id: any) => {
+    try {
+      const response = await fetch(`http://localhost:3000/products/${id}`);
+      if (await errorHandler(response, setError)) {
+        const data = await response.json();
+        setProduct(data.data);
+      }
+    } catch {
+      setError('Unable to retrieve product');
+    }
   }
+
+  return (
+    <>
+      <Navbar></Navbar>
+      <section className="product">
+      {error && <div className="error">Error: {error}</div>}
+      {product.map((product: Product) => 
+        <div className="card">
+          <img src={product.image}></img>
+          <div>
+            <h4>{product.title}</h4>
+            <h5>${product.price.toFixed(2)}</h5>
+            <p>{product.description}</p>
+          </div>
+        </div>
+      )}
+      </section>
+    </>
+  );
+}
   
   export default Product;
   
