@@ -21,7 +21,10 @@ function Navbar() {
           </svg>
           <h2>Robot Stores</h2>
         </div>
-        <h3><Link to="/">home</Link></h3>   
+        <div className="navLinks">
+          <h3><Link to="/">home</Link></h3>   
+          <h3><Link to="/products">products</Link></h3>  
+        </div>
       </nav>
     );
   }

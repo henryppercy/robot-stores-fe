@@ -36,6 +36,13 @@ nav {
     svg {
         width: 1.2rem;
     }
+
+    .navLinks {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        align-items: center;
+    }
 }
 
 @media screen and (min-width: 900px) {
