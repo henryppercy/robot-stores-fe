@@ -4,15 +4,15 @@ import Navbar from "../../Componants/Navbar";
 import errorHandler from "../../utils/errorHandler";
 import './Product.scss';
 
-type Product = {
-  id: number,
-  title: string,
-  price: number,
-  image: string,
-  description: string,
-}
-
 function Product() {
+  type Product = {
+    id: number,
+    title: string,
+    price: number,
+    image: string,
+    description: string,
+  }
+
   const { id } = useParams();
   const [product, setProduct] = useState([])
   const [error, setError] = useState('')

@@ -4,21 +4,21 @@ import ProductCard from "../../Componants/ProductCard";
 import errorHandler from "../../utils/errorHandler";
 import './Products.scss';
 
-type Product = {
+const Products = () => {
+  const [products, setProducts] = useState([]);
+  const [error, setError] = useState('');
+
+  type Product = {
   id: number,
   title: string,
   price: number,
   image: string,
-}
-
-function Products() {
-  const [products, setProducts] = useState([])
-  const [error, setError] = useState('')
+  };
 
   useEffect(() => {
-    getAllProducts()
-  }, [])
-  
+    getAllProducts();
+  }, []);
+
   const getAllProducts = async () => {
     try {
       const response = await fetch('http://localhost:3000/products');
@@ -40,7 +40,7 @@ function Products() {
             <select name="categories" id="categories">
               <option value="category" disabled selected>Category</option>
               <option value="aprons">Aprons</option>
-              <option value="baseball-ats">Baseball Hats</option>
+              <option value="baseball-hats">Baseball Hats</option>
               <option value="mugs">Mugs</option>
               <option value="t-shits">T-Shits</option>
             </select>
