@@ -5,7 +5,7 @@ import errorHandler from "../../utils/errorHandler";
 import './Product.scss';
 
 function Product() {
-  type Product = {
+  interface Product {
     id: number,
     title: string,
     price: number,
