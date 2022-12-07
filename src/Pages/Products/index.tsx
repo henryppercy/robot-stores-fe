@@ -8,7 +8,7 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState('');
 
-  type Product = {
+  interface Product {
   id: number,
   title: string,
   price: number,
@@ -18,6 +18,8 @@ const Products = () => {
   useEffect(() => {
     getAllProducts();
   }, []);
+
+  
 
   const getAllProducts = async () => {
     try {
@@ -47,6 +49,7 @@ const Products = () => {
             <label htmlFor="characters"></label>
             <select name="characters" id="characters">
               <option value="character" disabled selected>Character</option>
+              
               <option value="bubbles">Bubbles</option>
               <option value="dolores">Dolores</option>
               <option value="fred">Fred</option>
