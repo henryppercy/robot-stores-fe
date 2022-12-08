@@ -1,4 +1,4 @@
-# Robot Stores Front-end
+# Robot Stores Frontend
 
 ## About
 
