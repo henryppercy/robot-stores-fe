@@ -52,6 +52,13 @@
         grid-template-columns: 1fr 1fr;
         gap: 1.4rem;
     }
+
+    .error {
+       color: $light;
+       font-family: $body-text; 
+
+       padding: 1rem;
+    }
 }
 
 @media screen and (min-width: 900px) {

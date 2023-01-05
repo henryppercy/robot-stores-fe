@@ -54,9 +54,10 @@ const Products = () => {
               <option value="rex">Rex</option>
             </select>
         </form>
+        
+        {error && <div className="error">Error: {error}</div>}
           
         <div className="products">
-          {error && <div className="error">Error: {error}</div>}
           {products.map((product: Product) => <ProductCard key={product.id} id={product.id} title={product.title} price={product.price} image={product.image}></ProductCard>)}
         </div>
       </section>
