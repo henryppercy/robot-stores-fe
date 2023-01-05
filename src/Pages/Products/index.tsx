@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Navbar from "../../Componants/Navbar";
-import ProductCard from "../../Componants/ProductCard";
+import Navbar from "../../Components/Navbar";
+import ProductCard from "../../Components/ProductCard";
 import errorHandler from "../../utils/errorHandler";
 import './Products.scss';
 
