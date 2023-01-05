@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
-type Props = {
+type ProductDetails = {
   id: number,
   title: string,
   price: number,
   image: string,
 }
 
-const ProductCard = ({ id, title, price, image }: Props) => {  
+const ProductCard = ({ id, title, price, image }: ProductDetails) => {  
   return (
       <div className="card">
           <Link to={"/products/" + id}><img src={image}></img></Link>
