@@ -32,6 +32,13 @@
             border-radius: 1rem;
         }
     }
+
+    .error {
+        color: $light;
+        font-family: $body-text; 
+ 
+        padding: 1rem;
+     }
 }
 
 @media screen and (min-width: 900px) {
