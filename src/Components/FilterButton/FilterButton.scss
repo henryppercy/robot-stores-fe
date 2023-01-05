@@ -1,0 +1,12 @@
+@use '../../styles/colours' as *;
+
+.categoryButton {
+    color: $light;
+    background-color: $dark;
+    font-family: $body-text;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 0rem;
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+}
