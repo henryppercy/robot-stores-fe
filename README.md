@@ -23,7 +23,7 @@ This project is built using the following technologies:
 2. Navigate into the newly created repo: `cd robot-stores-fe`
 3. From the root of the project run: `npm install`
 4. To run the application locally run: `npm run dev`
-5. The API can be accessed at port `5173` or whichever is specified in the terminal
+5. The frontend can be run at port `5173` or whichever is specified in the terminal
 
 ### 3.2 Backend
 
