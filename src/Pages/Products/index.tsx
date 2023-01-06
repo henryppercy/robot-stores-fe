@@ -42,7 +42,7 @@ const Products = () => {
     }
   }
 
-  const filterItem = (currentCategory: string) => {
+  const filterItem = (currentCategory: string): void => {
     const newProducts = products.filter((product: Product) => {
       return product.category === currentCategory; 
     });

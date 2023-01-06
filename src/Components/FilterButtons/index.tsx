@@ -2,7 +2,7 @@ import './FilterButton.scss';
 
 type Props = {
     categories: Array<string>,
-    filterItem: any,
+    filterItem(currentCategory: string): void,
 };
 
 const FilterButtons = ({ categories, filterItem }: Props) => {
