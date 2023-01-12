@@ -31,7 +31,7 @@ const Products = () => {
 
   const getAllProducts = async () => {
     try {
-      const response = await fetch('http://localhost:3000/products');
+      const response = await fetch('https://robot-stores-be.2022-henryp.dev.io-academy.uk/products');
       if (await errorHandler(response, setError)) {
         const data = await response.json();
         setProducts(data.data);

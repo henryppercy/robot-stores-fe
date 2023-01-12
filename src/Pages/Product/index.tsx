@@ -23,7 +23,7 @@ function Product() {
   
   const getProduct = async (id: any) => {
     try {
-      const response = await fetch(`http://localhost:3000/products/${id}`);
+      const response = await fetch(`https://robot-stores-be.2022-henryp.dev.io-academy.uk/products/${id}`);
       if (await errorHandler(response, setError)) {
         const data = await response.json();
         setProduct(data.data);
