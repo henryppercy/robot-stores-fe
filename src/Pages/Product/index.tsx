@@ -3,42 +3,18 @@ import { useParams } from "react-router-dom";
 import Navbar from "../../Components/Navbar";
 import errorHandler from "../../utils/errorHandler";
 import './Product.scss';
+import robotStoresData from '../../data/robotStores.json';
+const data: any = robotStoresData;
 
 function Product() {
-  interface Product {
-    id: number,
-    title: string,
-    price: number,
-    image: string,
-    description: string,
-  }
-
-  const { id } = useParams();
-  const [product, setProduct] = useState([])
-  const [error, setError] = useState('')
-
-  useEffect(() => {
-    getProduct(id)
-  }, [])
-  
-  const getProduct = async (id: any) => { // To delete
-    try {
-      const response = await fetch(`https://robot-stores-be.2022-henryp.dev.io-academy.uk/products/${id}`);
-      if (await errorHandler(response, setError)) {
-        const data = await response.json();
-        setProduct(data.data);
-      }
-    } catch {
-      setError('Unable to retrieve product');
-    }
-  }
+  const { id }: any = useParams();
+  const dataId = parseInt(id);
+  const [product, setProduct] = useState(data[dataId - 1])
 
   return (
     <>
       <Navbar></Navbar>
       <section className="product">
-      {error && <div className="error">Error: {error}</div>}
-      {product.map((product: Product) => 
         <div className="card">
           <img src={product.image}></img>
           <div>
@@ -47,7 +23,6 @@ function Product() {
             <p>{product.description}</p>
           </div>
         </div>
-      )}
       </section>
     </>
   );

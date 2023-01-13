@@ -4,6 +4,7 @@ import ProductCard from "../../Components/ProductCard";
 import errorHandler from "../../utils/errorHandler";
 import './Products.scss';
 import FilterButtons from "../../Components/FilterButtons";
+import robotStoresData from '../../data/robotStores.json';
 
 type Product = {
   id: number,
@@ -22,25 +23,13 @@ type Product = {
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [error, setError] = useState('');
   const productCategories = [...new Set(products.map((product: Product) => product.category))];
-
+  const data: any = robotStoresData;
+  
   useEffect(() => {
-    getAllProducts();
+    setProducts(data);
+    setFilteredProducts(data);
   }, []);
-
-  const getAllProducts = async () => {
-    try {
-      const response = await fetch('https://robot-stores-be.2022-henryp.dev.io-academy.uk/products');
-      if (await errorHandler(response, setError)) {
-        const data = await response.json();
-        setProducts(data.data);
-        setFilteredProducts(data.data);
-      }
-    } catch {
-      setError('Unable to retrieve products');
-    }
-  }
 
   const filterItem = (currentCategory: string): void => {
     const newProducts = products.filter((product: Product) => {
@@ -57,7 +46,6 @@ const Products = () => {
           <button className="categoryButton" onClick={() => setFilteredProducts(products)}>All</button>
           <FilterButtons categories={productCategories} filterItem={filterItem}></FilterButtons>
         </div>
-        {error && <div className="error">Error: {error}</div>}
         <div className="products">
           {filteredProducts.map((product: Product) => 
           <ProductCard key={product.id} id={product.id} title={product.title} price={product.price} image={product.image}></ProductCard>)}
