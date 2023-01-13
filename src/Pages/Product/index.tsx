@@ -21,7 +21,7 @@ function Product() {
     getProduct(id)
   }, [])
   
-  const getProduct = async (id: any) => {
+  const getProduct = async (id: any) => { // To delete
     try {
       const response = await fetch(`https://robot-stores-be.2022-henryp.dev.io-academy.uk/products/${id}`);
       if (await errorHandler(response, setError)) {
